@@ -1,6 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Inter, Orbitron } from "next/font/google"
 import "./globals.css"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+})
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+})
 
 export const metadata: Metadata = {
   title: "Dimpura3D - Del archivo digital a la realidad tangible",
@@ -32,8 +43,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
-      <body>{children}</body>
+    <html lang="es" className={`${inter.variable} ${orbitron.variable}`}>
+      <body className="font-sans">{children}</body>
     </html>
   )
 }
