@@ -24,13 +24,13 @@ export default async function AdminDashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-slate-900/50 border border-white/10 rounded-2xl p-6 hover:shadow-neon-sm transition-all duration-300">
+          <div key={stat.label} className="bg-slate-900/40 border border-white/10 rounded-2xl p-6 hover:shadow-neon-sm hover:border-primary/30 transition-all duration-300 backdrop-blur-xl group">
             <div className="flex items-start justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-400 uppercase tracking-widest">{stat.label}</p>
-                <p className="text-3xl font-bold text-white mt-1">{stat.value}</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
+                <p className="text-3xl font-display font-bold text-white mt-2 group-hover:text-primary transition-colors">{stat.value}</p>
               </div>
-              <div className={`p-3 rounded-xl ${stat.bg} ${stat.color}`}>
+              <div className={`p-3 rounded-xl ${stat.bg} ${stat.color} shadow-lg shadow-black/20`}>
                 <stat.icon size={24} />
               </div>
             </div>
@@ -39,21 +39,32 @@ export default async function AdminDashboard() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-         <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wider">Actividad Reciente</h3>
-            <div className="flex items-center justify-center h-48 border border-white/5 bg-white/5 rounded-xl border-dashed">
-              <p className="text-slate-500 text-sm">No hay actividad reciente para mostrar</p>
+         <div className="bg-slate-900/40 border border-white/10 rounded-2xl p-8 backdrop-blur-xl">
+            <h3 className="text-xl font-display font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full shadow-neon-sm" />
+              Actividad Reciente
+            </h3>
+            <div className="flex flex-col items-center justify-center h-48 border border-white/5 bg-white/5 rounded-xl border-dashed">
+              <TrendingUp size={32} className="text-slate-800 mb-4" />
+              <p className="text-slate-500 text-sm uppercase tracking-widest font-bold">Sin datos de tráfico</p>
+              <p className="text-[10px] text-slate-600 mt-1">Conecta Google Analytics para ver estadísticas.</p>
             </div>
          </div>
-         <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-white mb-6 uppercase tracking-wider">Alertas del Sistema</h3>
+         <div className="bg-slate-900/40 border border-white/10 rounded-2xl p-8 backdrop-blur-xl">
+            <h3 className="text-xl font-display font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-3">
+              <div className="w-2 h-2 bg-secondary rounded-full shadow-neon-magenta" />
+              Alertas del Sistema
+            </h3>
             <div className="space-y-4">
-               {[1, 2].map((i) => (
-                 <div key={i} className="flex gap-4 p-4 rounded-xl bg-orange-400/5 border border-orange-400/20">
-                   <div className="w-2 h-2 rounded-full bg-orange-400 mt-1.5" />
+               {[
+                 { title: "Stock Crítico", desc: "El busto de Cell Pro está agotado.", type: "error" },
+                 { title: "Pendiente Envío", desc: "3 pedidos de Montevideo sin procesar.", type: "warning" }
+               ].map((alert, i) => (
+                 <div key={i} className={`flex gap-4 p-4 rounded-xl ${alert.type === 'error' ? 'bg-red-500/5 border-red-500/20' : 'bg-orange-400/5 border-orange-400/20'} border`}>
+                   <div className={`w-2 h-2 rounded-full ${alert.type === 'error' ? 'bg-red-500 animate-pulse' : 'bg-orange-400'} mt-1.5`} />
                    <div>
-                     <p className="text-sm font-bold text-orange-400 uppercase tracking-tighter">Stock Bajo</p>
-                     <p className="text-xs text-slate-400 mt-0.5">Varios productos están por debajo del límite mínimo.</p>
+                     <p className={`text-sm font-bold ${alert.type === 'error' ? 'text-red-500' : 'text-orange-400'} uppercase tracking-tight`}>{alert.title}</p>
+                     <p className="text-xs text-slate-400 mt-0.5">{alert.desc}</p>
                    </div>
                  </div>
                ))}
