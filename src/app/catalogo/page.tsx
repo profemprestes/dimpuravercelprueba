@@ -128,81 +128,85 @@ export default function CatalogoPage() {
       )}
 
       {/* Catalog Section */}
-      <section className="trending-section" id="catalogo">
-        <div className="container">
-          <div className="trending-header">
-            <h3>Catálogo de Productos</h3>
+      <section className="bg-[rgba(15,23,42,0.5)] py-[60px] border-t border-[rgba(124,58,237,0.2)] backdrop-blur-md" id="catalogo">
+        <div className="max-w-[1200px] mx-auto px-5">
+          <div className="flex justify-between items-center mb-10">
+            <h3 className="font-display text-[28px] text-[var(--color-brand-light)] tracking-wide">Catálogo de Productos</h3>
           </div>
 
-          <div className="product-grid">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Product 1 */}
-            <Link href="/catalogo/figura-anime-1" className="product-card hover-lift">
-              <div className="product-image">
-                <span className="product-badge new">NUEVO</span>
+            <Link href="/catalogo/figura-anime-1" className="block bg-[var(--color-brand-bg-card)] border border-[var(--color-brand-border-card)] rounded-2xl p-4 transition-all duration-300 backdrop-blur-md hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.3)] hover:-translate-y-1 no-underline group">
+              <div className="relative h-[200px] bg-[rgba(15,23,42,0.5)] mb-4 overflow-hidden rounded-xl">
+                <span className="absolute top-3 left-3 text-[10px] px-3 py-1.5 font-bold text-[var(--color-brand-light)] bg-gradient-to-br from-[var(--color-brand-purple)] to-[#A78BFA] rounded-full font-display tracking-widest z-10">NUEVO</span>
                 <img
                   src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Figura de Anime"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h4>Figura de Anime</h4>
-              <p>USD $45</p>
+              <h4 className="font-semibold mb-2 text-[var(--color-brand-light)] text-base">Figura de Anime</h4>
+              <p className="text-[var(--color-brand-green)] text-sm font-semibold font-display">USD $45</p>
             </Link>
 
             {/* Product 2 */}
-            <Link href="/catalogo/coleccionable-pop" className="product-card hover-lift">
-              <div className="product-image">
+            <Link href="/catalogo/coleccionable-pop" className="block bg-[var(--color-brand-bg-card)] border border-[var(--color-brand-border-card)] rounded-2xl p-4 transition-all duration-300 backdrop-blur-md hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.3)] hover:-translate-y-1 no-underline group">
+              <div className="relative h-[200px] bg-[rgba(15,23,42,0.5)] mb-4 overflow-hidden rounded-xl">
                 <img
                   src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Coleccionables Pop"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h4>Coleccionables Pop</h4>
-              <p>USD $35</p>
+              <h4 className="font-semibold mb-2 text-[var(--color-brand-light)] text-base">Coleccionables Pop</h4>
+              <p className="text-[var(--color-brand-green)] text-sm font-semibold font-display">USD $35</p>
             </Link>
 
             {/* Product 3 */}
-            <Link href="/catalogo/retrato-mascota" className="product-card hover-lift">
-              <div className="product-image">
-                <span className="product-badge sale">CUSTOM</span>
+            <Link href="/catalogo/retrato-mascota" className="block bg-[var(--color-brand-bg-card)] border border-[var(--color-brand-border-card)] rounded-2xl p-4 transition-all duration-300 backdrop-blur-md hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.3)] hover:-translate-y-1 no-underline group">
+              <div className="relative h-[200px] bg-[rgba(15,23,42,0.5)] mb-4 overflow-hidden rounded-xl">
+                <span className="absolute top-3 left-3 text-[10px] px-3 py-1.5 font-bold text-[var(--color-brand-dark)] bg-gradient-to-br from-[var(--color-brand-green)] to-[var(--color-brand-green-dark)] rounded-full font-display tracking-widest z-10">CUSTOM</span>
                 <img
                   src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Retrato de Mascota"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h4>Retrato de Mascota</h4>
-              <p>USD $60</p>
+              <h4 className="font-semibold mb-2 text-[var(--color-brand-light)] text-base">Retrato de Mascota</h4>
+              <p className="text-[var(--color-brand-green)] text-sm font-semibold font-display">USD $60</p>
             </Link>
 
             {/* Product 4 */}
-            <Link href="/catalogo/maqueta-edificio" className="product-card hover-lift">
-              <div className="product-image">
+            <Link href="/catalogo/maqueta-edificio" className="block bg-[var(--color-brand-bg-card)] border border-[var(--color-brand-border-card)] rounded-2xl p-4 transition-all duration-300 backdrop-blur-md hover:border-[rgba(16,185,129,0.4)] hover:shadow-[0_8px_30px_rgba(124,58,237,0.3)] hover:-translate-y-1 no-underline group">
+              <div className="relative h-[200px] bg-[rgba(15,23,42,0.5)] mb-4 overflow-hidden rounded-xl">
                 <img
                   src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                   alt="Maqueta Arquitectonica"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-              <h4>Maqueta de Edificio</h4>
-              <p>USD $120</p>
+              <h4 className="font-semibold mb-2 text-[var(--color-brand-light)] text-base">Maqueta de Edificio</h4>
+              <p className="text-[var(--color-brand-green)] text-sm font-semibold font-display">USD $120</p>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Simple Footer Strip */}
-      <footer className="footer">
-        <div className="footer-content">
-          <Link href="/" className="footer-logo">
-            DIMPURA3D
+      <footer className="bg-[rgba(2,8,23,0.8)] border-t border-[rgba(124,58,237,0.2)] py-8 mt-auto relative z-10 backdrop-blur-md">
+        <div className="max-w-[1200px] mx-auto px-5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <Link href="/" className="font-display font-bold text-xl tracking-wider text-[var(--color-brand-light)] no-underline">
+            DIMPURA<span className="text-[var(--color-brand-green)]">3D</span>
           </Link>
-          <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
-          <div className="footer-links">
-            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer">
+          <div className="text-[var(--color-brand-muted-dark)] text-sm text-center">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
+          <div className="flex gap-4 text-sm font-semibold">
+            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-muted)] hover:text-[var(--color-brand-green)] transition-colors">
               Instagram
             </a>
-            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-muted)] hover:text-[var(--color-brand-green)] transition-colors">
               Facebook
             </a>
-            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer" className="text-[var(--color-brand-muted)] hover:text-[var(--color-brand-green)] transition-colors">
               WhatsApp
             </a>
           </div>
