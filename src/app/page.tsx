@@ -39,6 +39,9 @@ export default function HomePage() {
 
         {/* Links */}
         <div className="nav-links">
+          <Link href="/catalogo" className="nav-link">
+            CATÁLOGO
+          </Link>
           <Link href="/#servicios" className="nav-link">
             SERVICIOS
           </Link>
