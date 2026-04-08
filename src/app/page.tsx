@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import Link from "next/link"
+import Footer from "@/components/layout/footer"
 
 export default function HomePage() {
   const [searchOpen, setSearchOpen] = useState(false)
@@ -468,27 +469,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Simple Footer Strip */}
-      <footer className="footer">
-        <div className="footer-content">
-          <Link href="/" className="footer-logo flex items-center gap-2">
-            <img src="/logo.png" alt="Dimpura3D" className="h-6 w-auto" />
-            <span>DIMPURA3D</span>
-          </Link>
-          <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
-          <div className="footer-links">
-            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer">
-              Instagram
-            </a>
-            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer">
-              Facebook
-            </a>
-            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
-          </div>
-        </div>
-      </footer>
+      {/* Custom Global Footer */}
+      <Footer />
     </>
   )
 }

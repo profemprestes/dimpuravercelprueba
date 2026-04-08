@@ -24,8 +24,8 @@ export default function Footer() {
                     <h4 className="font-orbitron font-bold tracking-widest text-primary text-xs uppercase mb-8 glow-cyan">Enlaces Rápidos</h4>
                     <ul className="space-y-4">
                         <li><Link href="/#historia" className="text-slate-500 hover:text-primary transition-all text-sm font-space-grotesk uppercase tracking-wider">Nuestra Historia</Link></li>
-                        <li><Link href="/catalog" className="text-slate-500 hover:text-primary transition-all text-sm font-space-grotesk uppercase tracking-wider">Catálogo 3D</Link></li>
-                        <li><Link href="/contact" className="text-slate-500 hover:text-primary transition-all text-sm font-space-grotesk uppercase tracking-wider">Contacto</Link></li>
+                        <li><Link href="/catalogo" className="text-slate-500 hover:text-primary transition-all text-sm font-space-grotesk uppercase tracking-wider">Catálogo 3D</Link></li>
+                        <li><Link href="/#contacto" className="text-slate-500 hover:text-primary transition-all text-sm font-space-grotesk uppercase tracking-wider">Contacto</Link></li>
                     </ul>
                 </div>
 
@@ -45,20 +45,20 @@ export default function Footer() {
                     <ul className="space-y-4 text-sm font-space-grotesk text-slate-500">
                         <li className="flex items-center gap-3">
                             <span className="text-primary/60">Email:</span>
-                            <a href="mailto:hola@dimpura3d.com" className="hover:text-primary transition-colors">hola@dimpura3d.com</a>
+                            <a href="mailto:dimpura3d@gmail.com" className="hover:text-primary transition-colors">dimpura3d@gmail.com</a>
                         </li>
                         <li className="flex items-center gap-3">
                             <span className="text-primary/60">WhatsApp:</span>
-                            <a href="tel:+59890000000" className="hover:text-primary transition-colors">+598 900 000 000</a>
+                            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">+598 91 037 258</a>
                         </li>
                         <li className="mt-6 flex items-center gap-6">
-                            <a href="#" className="p-2 glass rounded-lg text-slate-400 hover:text-primary hover:shadow-neon transition-all">
+                            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer" className="p-2 glass rounded-lg text-slate-400 hover:text-primary hover:shadow-neon transition-all">
                                 <Instagram size={18} />
                             </a>
-                            <a href="#" className="p-2 glass rounded-lg text-slate-400 hover:text-secondary hover:shadow-neon-magenta transition-all">
+                            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer" className="p-2 glass rounded-lg text-slate-400 hover:text-secondary hover:shadow-neon-magenta transition-all">
                                 <Facebook size={18} />
                             </a>
-                            <a href="#" className="p-2 glass rounded-lg text-slate-400 hover:text-accent hover:shadow-neon-green transition-all">
+                            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer" className="p-2 glass rounded-lg text-slate-400 hover:text-accent hover:shadow-neon-green transition-all">
                                 <MessageSquare size={18} />
                             </a>
                         </li>
@@ -67,7 +67,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto border-t border-white/5 pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <span className="text-slate-600 font-space-grotesk text-[10px] uppercase tracking-[0.2em]">© 2024 DIMPURA3D. MONTEVIDEO, URUGUAY.</span>
+                <span className="text-slate-600 font-space-grotesk text-[10px] uppercase tracking-[0.2em]">© 2026 DIMPURA3D. MONTEVIDEO, URUGUAY.</span>
                 <div className="flex items-center gap-8">
                     <Link href="/terms" className="text-slate-600 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Términos</Link>
                     <Link href="/privacy" className="text-slate-600 hover:text-white text-[10px] uppercase tracking-widest transition-colors">Privacidad</Link>
