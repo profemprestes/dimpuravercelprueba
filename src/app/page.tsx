@@ -31,8 +31,9 @@ export default function HomePage() {
       <nav className="navigation">
         {/* Logo */}
         <div className="logo">
-          <Link href="/">
-            DIMPURA<span>3D</span>
+          <Link href="/" className="flex items-center gap-2">
+            <img src="/logo.png" alt="Dimpura3D Logo" className="h-10 w-auto" />
+            <span className="hidden sm:inline">DIMPURA<span>3D</span></span>
           </Link>
           <div className="beta-badge">MVD</div>
         </div>
@@ -161,9 +162,9 @@ export default function HomePage() {
           {/* Social Proof */}
           <div className="social-proof">
             <div className="avatar-stack">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente" />
-              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Cliente" />
-              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Cliente" />
+              <img src="/img_exp/20201211_043424_utc_profile_pic.jpg" alt="Cliente" />
+              <img src="/img_exp/20251217_015133_utc_1.jpg" alt="Cliente" />
+              <img src="/img_exp/20251217_015133_utc_2.jpg" alt="Cliente" />
             </div>
             <div>
               <div className="social-proof-title">+500 Proyectos</div>
@@ -192,7 +193,7 @@ export default function HomePage() {
           {/* Main Image */}
           <div className="main-image-container">
             <img
-              src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              src="/img_exp/cascomasterchief.jpg"
               alt="Impresora 3D creando figura coleccionable"
             />
             <div className="price-tag">FDM + RESINA</div>
@@ -201,7 +202,7 @@ export default function HomePage() {
           {/* Secondary Image (Floating) */}
           <div className="secondary-image">
             <img
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              src="/img_exp/figuraarticuladachimuelo.jpg"
               alt="Figura coleccionable pintada"
             />
           </div>
@@ -209,7 +210,7 @@ export default function HomePage() {
           {/* Sticker Graphic */}
           <div className="sticker-graphic">
             <img
-              src="https://images.unsplash.com/photo-1612441804231-fe428ec7f38d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              src="/img_exp/máscaradeadpool.jpg"
               alt="Detalle de pintura 3D"
             />
             <div className="hot-badge">PRO</div>
@@ -244,7 +245,7 @@ export default function HomePage() {
               <div className="product-image">
                 <span className="product-badge new">DISEÑO</span>
                 <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/asísaleun.jpg"
                   alt="Modelado y Diseño 3D"
                 />
               </div>
@@ -256,7 +257,7 @@ export default function HomePage() {
             <Link href="/product/impresion-3d" className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/lemostramoslanuevaimpresoraderesina.jpg"
                   alt="Impresion 3D FDM y Resina"
                 />
               </div>
@@ -269,7 +270,7 @@ export default function HomePage() {
               <div className="product-image">
                 <span className="product-badge sale">PREMIUM</span>
                 <img
-                  src="https://images.unsplash.com/photo-1612441804231-fe428ec7f38d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/bustodeadpool.jpg"
                   alt="Pintura y Acabados Profesionales"
                 />
               </div>
@@ -281,7 +282,7 @@ export default function HomePage() {
             <Link href="/product/maquetas" className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/réplicadecopalibertadores.jpg"
                   alt="Maquetas Arquitectonicas"
                 />
               </div>
@@ -306,7 +307,7 @@ export default function HomePage() {
               <div className="product-image">
                 <span className="product-badge new">COLECCIONABLE</span>
                 <img
-                  src="https://images.unsplash.com/photo-1608889825205-eebdb9fc5806?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/bustodecellperfecto.jpg"
                   alt="Coleccionables Pop Culture"
                 />
               </div>
@@ -318,7 +319,7 @@ export default function HomePage() {
             <div className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/cascogriffith.jpg"
                   alt="Maqueta Arquitectonica"
                 />
               </div>
@@ -331,19 +332,19 @@ export default function HomePage() {
               <div className="product-image">
                 <span className="product-badge sale">CUSTOM</span>
                 <img
-                  src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/estatuilladiscóbolodemirón.jpg"
                   alt="Retratos 3D de Mascotas"
                 />
               </div>
-              <h4>Retratos de Mascotas</h4>
-              <p>Personalizados</p>
+              <h4>Esculturas Clásicas</h4>
+              <p>Réplicas históricas</p>
             </div>
 
             {/* Project 4 */}
             <div className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  src="/img_exp/figuraalbedo.jpg"
                   alt="Figuras de Anime"
                 />
               </div>
@@ -470,8 +471,9 @@ export default function HomePage() {
       {/* Simple Footer Strip */}
       <footer className="footer">
         <div className="footer-content">
-          <Link href="/" className="footer-logo">
-            DIMPURA3D
+          <Link href="/" className="footer-logo flex items-center gap-2">
+            <img src="/logo.png" alt="Dimpura3D" className="h-6 w-auto" />
+            <span>DIMPURA3D</span>
           </Link>
           <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
           <div className="footer-links">
