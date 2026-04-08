@@ -2,6 +2,7 @@ import { createClient } from "@/lib/server";
 import { Plus, Search, Filter, MoreVertical, Edit2, Trash2, ExternalLink, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { AddProductDialog } from "@/components/admin/AddProductDialog";
 
 export default async function AdminProductsPage() {
   const supabase = await createClient();
@@ -22,10 +23,7 @@ export default async function AdminProductsPage() {
           <h2 className="text-3xl font-display font-bold uppercase tracking-widest text-white">CMS de Productos</h2>
           <p className="text-slate-400 mt-2">Gestiona el catálogo de Dimpura3D, stock y precios.</p>
         </div>
-        <Button className="bg-primary text-slate-950 font-bold uppercase tracking-widest shadow-neon hover:shadow-neon-lg transition-all gap-2">
-          <Plus size={20} />
-          Nuevo Producto
-        </Button>
+        <AddProductDialog />
       </div>
 
       <div className="bg-slate-900/50 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl">
