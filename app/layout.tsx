@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "GZ.STORE - Too Cool For School",
+  title: "Envios DosRuedas - Tu Solucion Confiable",
   description:
-    "Streetwear designed for the next generation of creators. Sustainable fabrics, oversized fits, and zero compromises on the drip.",
+    "Logistica urbana de alta precision y confiabilidad para envios inmediatos, programados y soluciones comerciales en Mar del Plata.",
   generator: "v0.app",
   icons: {
     icon: [

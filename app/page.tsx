@@ -11,7 +11,7 @@ export default function HomePage() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Searching for:", searchQuery)
+    console.log("Buscando:", searchQuery)
     setSearchOpen(false)
   }
 
@@ -21,9 +21,8 @@ export default function HomePage() {
       <div className="marquee-bar">
         <div className="marquee-container">
           <div className="marquee-content">
-            FREE SHIPPING ON ORDERS OVER $75 • NEW DROP: SKATER BOY VOL. 2 • WORLDWIDE SHIPPING • JOIN THE DISCORD FOR
-            EARLY ACCESS • FREE SHIPPING ON ORDERS OVER $75 • NEW DROP: SKATER BOY VOL. 2 • WORLDWIDE SHIPPING • JOIN
-            THE DISCORD FOR EARLY ACCESS •
+            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS • 
+            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS •
           </div>
         </div>
       </div>
@@ -33,24 +32,24 @@ export default function HomePage() {
         {/* Logo */}
         <div className="logo">
           <Link href="/">
-            GZ<span>.</span>STORE
+            DOS<span>RUEDAS</span>
           </Link>
-          <div className="beta-badge">BETA</div>
+          <div className="beta-badge">MDP</div>
         </div>
 
         {/* Links */}
         <div className="nav-links">
-          <Link href="/#trending" className="nav-link">
-            LATEST DROPS
+          <Link href="/#servicios" className="nav-link">
+            SERVICIOS
           </Link>
-          <Link href="/#trending" className="nav-link">
-            CLOTHING
+          <Link href="/#como-funciona" className="nav-link">
+            COMO FUNCIONA
           </Link>
-          <Link href="/#trending" className="nav-link">
-            SNEAKERS
+          <Link href="/#tarifas" className="nav-link">
+            TARIFAS
           </Link>
-          <Link href="/#trending" className="nav-link">
-            ACCESSORIES
+          <Link href="/#contacto" className="nav-link">
+            CONTACTO
           </Link>
         </div>
 
@@ -63,7 +62,7 @@ export default function HomePage() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -78,7 +77,7 @@ export default function HomePage() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
@@ -93,13 +92,14 @@ export default function HomePage() {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <circle cx="9" cy="21" r="1"></circle>
-              <circle cx="20" cy="21" r="1"></circle>
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
+              <path d="M16 8h4l3 4v5a1 1 0 0 1-1 1h-3"></path>
+              <circle cx="5.5" cy="18.5" r="2.5"></circle>
+              <circle cx="18.5" cy="18.5" r="2.5"></circle>
             </svg>
             <span className="cart-badge">2</span>
           </Link>
@@ -112,7 +112,7 @@ export default function HomePage() {
             <form onSubmit={handleSearch}>
               <input
                 type="text"
-                placeholder="Search for products..."
+                placeholder="Rastrear envio o buscar servicio..."
                 className="search-input"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -120,7 +120,7 @@ export default function HomePage() {
               />
             </form>
             <button className="search-close" onClick={() => setSearchOpen(false)}>
-              ✕
+              X
             </button>
           </div>
         </div>
@@ -131,57 +131,57 @@ export default function HomePage() {
         {/* Left Content */}
         <div className="hero-content">
           {/* Badge */}
-          <div className="season-badge">SEASON 04 // FALL COLLECTION</div>
+          <div className="season-badge">LOGISTICA URBANA // MAR DEL PLATA</div>
 
           {/* Headline */}
           <h1 className="hero-headline">
-            TOO COOL
+            TU ENVIO
             <br />
-            FOR <span className="hero-headline-highlight">SCHOOL.</span>
+            <span className="hero-headline-highlight">CONFIABLE.</span>
           </h1>
 
           {/* Subheadline */}
           <p className="hero-subtext">
-            Streetwear designed for the next generation of creators. Sustainable fabrics, oversized fits, and zero
-            compromises on the drip.
+            Logistica urbana de alta precision y confiabilidad. Envios inmediatos, programados 
+            y soluciones comerciales para tu negocio en Mar del Plata.
           </p>
 
           {/* CTA Buttons */}
           <div className="cta-buttons">
-            <Link href="#trending" className="btn-primary hover-lift">
-              SHOP THE DROP
+            <Link href="#servicios" className="btn-primary hover-lift">
+              SOLICITAR ENVIO
             </Link>
-            <Link href="#trending" className="btn-secondary hover-lift">
-              VIEW LOOKBOOK
+            <Link href="#como-funciona" className="btn-secondary hover-lift">
+              COMO FUNCIONA
             </Link>
           </div>
 
           {/* Social Proof */}
           <div className="social-proof">
             <div className="avatar-stack">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop" alt="User" />
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="User" />
-              <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&h=100&fit=crop" alt="User" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente" />
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Cliente" />
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Cliente" />
             </div>
             <div>
-              <div className="social-proof-title">12k+ Mini Icons</div>
-              <div className="social-proof-subtitle">Wearing GZ.STORE worldwide</div>
+              <div className="social-proof-title">+5,000 Envios</div>
+              <div className="social-proof-subtitle">Entregados con exito en MDP</div>
             </div>
           </div>
         </div>
 
-        {/* Right Visuals (Collage Style) */}
+        {/* Right Visuals */}
         <div className="hero-visuals">
           {/* Abstract Background Shape */}
           <svg
             className="abstract-shape"
-            width="600"
-            height="600"
+            width="500"
+            height="500"
             viewBox="0 0 200 200"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill="#5D3FD3"
+              fill="#1E40AF"
               d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.6,31.6C59,41.7,47.1,49,35.3,55.1C23.5,61.2,11.8,66.1,-0.6,67.1C-12.9,68.1,-25.8,65.2,-37.9,59.2C-50,53.2,-61.3,44.1,-70.5,32.6C-79.7,21.1,-86.8,7.2,-85.1,-6.1C-83.3,-19.4,-72.7,-32.1,-61.6,-41.8C-50.5,-51.5,-38.9,-58.2,-27.1,-66.9C-15.3,-75.6,-3.3,-86.3,10.2,-83.8C23.7,-81.3,30.5,-83.6,44.7,-76.4Z"
               transform="translate(100 100)"
             ></path>
@@ -190,103 +190,103 @@ export default function HomePage() {
           {/* Main Image */}
           <div className="main-image-container">
             <img
-              src="https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-              alt="Kid in stylish streetwear hoodie"
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Mensajero en moto realizando entrega"
             />
-            <div className="price-tag">$45.00</div>
+            <div className="price-tag">30 MIN</div>
           </div>
 
           {/* Secondary Image (Floating) */}
           <div className="secondary-image">
             <img
-              src="https://images.unsplash.com/photo-1560769629-975ec94e6a86?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-              alt="Kids sneakers close up"
+              src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Paquete listo para enviar"
             />
           </div>
 
           {/* Sticker Graphic */}
           <div className="sticker-graphic">
             <img
-              src="https://images.unsplash.com/photo-1547447134-cd3f5c716030?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-              alt="Sticker"
+              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+              alt="Tracking GPS"
             />
-            <div className="hot-badge">HOT</div>
+            <div className="hot-badge">GPS</div>
           </div>
 
           {/* Decorative Star */}
           <svg
             className="decorative-star"
-            width="80"
-            height="80"
+            width="60"
+            height="60"
             viewBox="0 0 24 24"
-            fill="#ccff00"
-            stroke="#000"
-            strokeWidth="2"
+            fill="#F9A825"
+            stroke="#020817"
+            strokeWidth="1"
           >
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
           </svg>
         </div>
       </main>
 
-      {/* Trending Strip */}
-      <section className="trending-section" id="trending">
+      {/* Services Section */}
+      <section className="trending-section" id="servicios">
         <div className="container">
           <div className="trending-header">
-            <h3>Trending Now</h3>
-            <Link href="#trending">See All</Link>
+            <h3>Nuestros Servicios</h3>
+            <Link href="#contacto">Contactar</Link>
           </div>
 
           <div className="product-grid">
-            {/* Product 1 */}
-            <Link href="/product/oversized-graffiti-tee" className="product-card hover-lift">
+            {/* Service 1 */}
+            <Link href="/product/envio-express" className="product-card hover-lift">
               <div className="product-image">
-                <span className="product-badge new">NEW</span>
+                <span className="product-badge new">RAPIDO</span>
                 <img
-                  src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Oversized Graffiti Tee"
+                  src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Envio Express"
                 />
               </div>
-              <h4>Oversized Graffiti Tee</h4>
-              <p>$28.00</p>
+              <h4>Envio Express</h4>
+              <p>Desde $800</p>
             </Link>
 
-            {/* Product 2 */}
-            <Link href="/product/neon-beanie" className="product-card hover-lift">
+            {/* Service 2 */}
+            <Link href="/product/envio-programado" className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Neon Beanie"
+                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Envio Programado"
                 />
               </div>
-              <h4>Neon Beanie</h4>
-              <p>$15.00</p>
+              <h4>Envio Programado</h4>
+              <p>Desde $600</p>
             </Link>
 
-            {/* Product 3 */}
-            <Link href="/product/utility-cargo-pants" className="product-card hover-lift">
+            {/* Service 3 */}
+            <Link href="/product/paqueteria-comercial" className="product-card hover-lift">
               <div className="product-image">
-                <span className="product-badge sale">SALE</span>
+                <span className="product-badge sale">PROMO</span>
                 <img
-                  src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Utility Cargo Pants"
+                  src="https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Paqueteria Comercial"
                 />
               </div>
-              <h4>Utility Cargo Pants</h4>
+              <h4>Paqueteria Comercial</h4>
               <p>
-                <span className="price-old">$55.00</span> $42.00
+                <span className="price-old">$1200</span> $950
               </p>
             </Link>
 
-            {/* Product 4 */}
-            <Link href="/product/chunky-skate-shoes" className="product-card hover-lift">
+            {/* Service 4 */}
+            <Link href="/product/delivery-empresarial" className="product-card hover-lift">
               <div className="product-image">
                 <img
-                  src="https://images.unsplash.com/photo-1460353581641-37baddab0fa2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                  alt="Chunky Skate Shoes"
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                  alt="Delivery Empresarial"
                 />
               </div>
-              <h4>Chunky Skate Shoes</h4>
-              <p>$65.00</p>
+              <h4>Delivery Empresarial</h4>
+              <p>Consultar</p>
             </Link>
           </div>
         </div>
@@ -296,18 +296,18 @@ export default function HomePage() {
       <footer className="footer">
         <div className="footer-content">
           <Link href="/" className="footer-logo">
-            GZ.STORE
+            DOSRUEDAS
           </Link>
-          <div className="footer-copyright">© 2023 Gen Z Store. All rights reserved. No Cap.</div>
+          <div className="footer-copyright">2024 Envios DosRuedas. Todos los derechos reservados. Mar del Plata.</div>
           <div className="footer-links">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-              TikTok
+            <a href="https://wa.me/542234000000" target="_blank" rel="noopener noreferrer">
+              WhatsApp
             </a>
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-              Discord
+            <a href="mailto:info@dosruedas.com" target="_blank" rel="noopener noreferrer">
+              Email
             </a>
           </div>
         </div>
