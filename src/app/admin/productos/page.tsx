@@ -20,7 +20,7 @@ export default async function AdminProductsPage() {
     <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h2 className="text-3xl font-display font-bold uppercase tracking-widest text-white">CMS de Productos</h2>
+          <h1 className="text-3xl font-display font-bold uppercase tracking-widest text-white">CMS de Productos</h1>
           <p className="text-slate-400 mt-2">Gestiona el catálogo de Dimpura3D, stock y precios.</p>
         </div>
         <AddProductDialog />
