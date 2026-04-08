@@ -20,7 +20,7 @@
         "net"
     ], // Mantén tu lista actual
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     // Añade esto para evitar que Tailwind choque con Deno
     "tailwindCSS.includeLanguages": {
