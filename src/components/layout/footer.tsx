@@ -4,7 +4,7 @@ import { Instagram, Facebook, MessageSquare } from "lucide-react";
 export default function Footer() {
     return (
         <footer className="border-t border-primary/10 bg-black/60 pt-20 pb-10 px-6 mt-20 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-primary/30 to-transparent"></div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
                 {/* Col 1: Brand */}

@@ -64,7 +64,7 @@ export default async function AdminProductsPage() {
                   <tr key={product.id} className="hover:bg-white/5 transition-colors group">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 rounded-lg bg-slate-800 border border-white/10 overflow-hidden flex-shrink-0">
+                        <div className="w-12 h-12 rounded-lg bg-slate-800 border border-white/10 overflow-hidden shrink-0">
                           {product.image_url ? (
                             <img src={product.image_url} alt={product.name} className="w-full h-full object-cover" />
                           ) : (

@@ -1,6 +1,6 @@
 import { requireAdmin } from "@/lib/auth";
 import Link from "next/link";
-import "@/src/styles/globals.css";
+import "@/styles/globals.css";
 import {
   Package,
   LayoutDashboard,

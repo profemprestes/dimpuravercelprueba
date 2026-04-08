@@ -1,6 +1,6 @@
 import { Package, Users, ShoppingCart, TrendingUp } from "lucide-react";
 import { createClient } from "@/lib/server";
-import "@/src/styles/globals.css";
+import "@/styles/globals.css";
 
 export default async function AdminDashboard() {
   const supabase = await createClient();
