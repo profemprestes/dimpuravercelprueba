@@ -1,10 +1,11 @@
 import { requireAdmin } from "@/lib/auth";
 import Link from "next/link";
-import { 
-  Package, 
-  LayoutDashboard, 
-  Users, 
-  Settings, 
+import "@/src/styles/globals.css";
+import {
+  Package,
+  LayoutDashboard,
+  Users,
+  Settings,
   LogOut,
   Menu
 } from "lucide-react";
@@ -28,7 +29,7 @@ export default async function AdminLayout({
             <span className="font-display font-bold uppercase tracking-widest text-xl group-hover:text-primary transition-colors">Dimpura<span className="text-primary">3D</span></span>
           </Link>
         </div>
-        
+
         <nav className="flex-1 p-4 space-y-2 mt-4">
           <Link href="/admin" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white/5 text-primary border border-primary/20 shadow-neon-sm">
             <LayoutDashboard size={20} />
@@ -60,12 +61,12 @@ export default async function AdminLayout({
       <main className="flex-1 flex flex-col min-w-0">
         <header className="h-16 border-b border-white/10 bg-slate-900/50 backdrop-blur-xl flex items-center justify-between px-6 md:px-8">
           <div className="flex items-center gap-4 md:hidden">
-             <Button variant="ghost" size="icon">
-               <Menu size={24} />
-             </Button>
-             <span className="font-display font-bold uppercase tracking-widest">Admin</span>
+            <Button variant="ghost" size="icon">
+              <Menu size={24} />
+            </Button>
+            <span className="font-display font-bold uppercase tracking-widest">Admin</span>
           </div>
-          
+
           <div className="hidden md:block">
             <h1 className="text-sm font-medium text-slate-400 uppercase tracking-widest">Panel de Administración</h1>
           </div>
