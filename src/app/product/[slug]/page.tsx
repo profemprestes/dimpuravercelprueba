@@ -221,16 +221,15 @@ export default function ServicePage() {
             {/* Request Quote Button */}
             <button
               onClick={handleRequestQuote}
-              className="btn-primary hover-lift"
-              style={{ textAlign: "center", display: "block", width: "100%", marginTop: "24px" }}
+              className="btn-primary hover-lift btn-block-mt"
             >
               SOLICITAR COTIZACION POR WHATSAPP
             </button>
 
             {/* Additional Info */}
-            <div style={{ marginTop: "32px", padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
-              <h4 style={{ color: "#10B981", marginBottom: "12px", fontFamily: "Orbitron" }}>Incluye:</h4>
-              <ul style={{ color: "#94a3b8", fontSize: "14px", lineHeight: "1.8", paddingLeft: "20px" }}>
+            <div className="info-box">
+              <h4 className="info-box-title">Incluye:</h4>
+              <ul className="info-box-list">
                 <li>Asesoria personalizada</li>
                 <li>Revisiones hasta aprobacion</li>
                 <li>Entrega en Montevideo o envio</li>

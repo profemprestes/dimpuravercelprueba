@@ -111,26 +111,13 @@ export default function ProfilePage() {
 
           {/* About Card */}
           <div className="profile-card">
-            <div className="profile-header" style={{ flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-              <div style={{ 
-                width: "120px", 
-                height: "120px", 
-                borderRadius: "50%", 
-                background: "linear-gradient(135deg, #7C3AED 0%, #10B981 100%)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                marginBottom: "20px",
-                fontSize: "36px",
-                fontFamily: "Orbitron",
-                fontWeight: "bold",
-                color: "#f8fafc"
-              }}>
+            <div className="profile-header profile-header-centered">
+              <div className="profile-avatar-large">
                 D3D
               </div>
               <div>
-                <h2 className="profile-name" style={{ textAlign: "center" }}>Dimpura3D</h2>
-                <p className="profile-email" style={{ textAlign: "center" }}>Estudio de Impresion 3D en Montevideo</p>
+                <h2 className="profile-name text-center">Dimpura3D</h2>
+                <p className="profile-email text-center">Estudio de Impresion 3D en Montevideo</p>
               </div>
             </div>
             
@@ -153,11 +140,11 @@ export default function ProfilePage() {
           {/* Description */}
           <div className="profile-card">
             <h3 className="profile-section-title">NUESTRA HISTORIA</h3>
-            <p style={{ color: "#94a3b8", lineHeight: "1.8", marginBottom: "16px" }}>
+            <p className="text-body-spaced">
               Somos un estudio en Montevideo dedicado a materializar ideas. No solo imprimimos; diseñamos, 
               pulimos y pintamos para dar un acabado profesional a maquetas, coleccionables y prototipos industriales.
             </p>
-            <p style={{ color: "#94a3b8", lineHeight: "1.8" }}>
+            <p className="text-body">
               Desde figuras de cultura pop hasta maquetas arquitectonicas, cada proyecto recibe atencion al detalle 
               y acabados que superan expectativas. Trabajamos con tecnologia FDM y resina para garantizar la mejor 
               calidad en cada pieza.
@@ -167,22 +154,22 @@ export default function ProfilePage() {
           {/* Services Summary */}
           <div className="profile-card">
             <h3 className="profile-section-title">QUE HACEMOS</h3>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
-              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
-                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>MODELADO 3D</h4>
-                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Diseño digital desde cero</p>
+            <div className="services-grid">
+              <div className="service-card">
+                <h4 className="service-title">MODELADO 3D</h4>
+                <p className="service-desc">Diseño digital desde cero</p>
               </div>
-              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
-                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>IMPRESION 3D</h4>
-                <p style={{ color: "#94a3b8", fontSize: "13px" }}>FDM y Resina de alta resolucion</p>
+              <div className="service-card">
+                <h4 className="service-title">IMPRESION 3D</h4>
+                <p className="service-desc">FDM y Resina de alta resolucion</p>
               </div>
-              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
-                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>PINTURA</h4>
-                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Acabados profesionales</p>
+              <div className="service-card">
+                <h4 className="service-title">PINTURA</h4>
+                <p className="service-desc">Acabados profesionales</p>
               </div>
-              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
-                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>MAQUETAS</h4>
-                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Arquitectura e ingenieria</p>
+              <div className="service-card">
+                <h4 className="service-title">MAQUETAS</h4>
+                <p className="service-desc">Arquitectura e ingenieria</p>
               </div>
             </div>
           </div>
@@ -190,26 +177,24 @@ export default function ProfilePage() {
           {/* Contact Info */}
           <div className="profile-card">
             <h3 className="profile-section-title">CONTACTO</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div className="flex-col-gap">
               <a 
                 href="https://wa.me/59891037258"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary hover-lift"
-                style={{ width: "100%", textAlign: "center" }}
+                className="btn-primary hover-lift btn-full-width"
               >
                 WHATSAPP: +598 91 037 258
               </a>
               <a 
                 href="mailto:dimpura3d@gmail.com"
-                className="btn-secondary hover-lift"
-                style={{ width: "100%", textAlign: "center" }}
+                className="btn-secondary hover-lift btn-full-width"
               >
                 EMAIL: dimpura3d@gmail.com
               </a>
-              <div style={{ padding: "16px", background: "rgba(16, 185, 129, 0.1)", borderRadius: "8px", border: "1px solid rgba(16, 185, 129, 0.2)", textAlign: "center" }}>
-                <p style={{ color: "#10B981", fontFamily: "Orbitron", fontSize: "12px", marginBottom: "8px" }}>TALLER</p>
-                <p style={{ color: "#94a3b8" }}>Ignacio Medina 3257, Montevideo, Uruguay</p>
+              <div className="location-card">
+                <p className="location-title">TALLER</p>
+                <p className="text-muted">Ignacio Medina 3257, Montevideo, Uruguay</p>
               </div>
             </div>
           </div>
@@ -217,13 +202,12 @@ export default function ProfilePage() {
           {/* Social Links */}
           <div className="profile-card">
             <h3 className="profile-section-title">REDES SOCIALES</h3>
-            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            <div className="social-links-container">
               <a 
                 href="https://www.instagram.com/dimpura3d/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary hover-lift"
-                style={{ flex: 1, minWidth: "150px", textAlign: "center" }}
+                className="btn-secondary hover-lift social-link-btn"
               >
                 INSTAGRAM
               </a>
@@ -231,8 +215,7 @@ export default function ProfilePage() {
                 href="https://www.facebook.com/dimpura3d.uy/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary hover-lift"
-                style={{ flex: 1, minWidth: "150px", textAlign: "center" }}
+                className="btn-secondary hover-lift social-link-btn"
               >
                 FACEBOOK
               </a>

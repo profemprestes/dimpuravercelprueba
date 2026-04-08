@@ -128,13 +128,13 @@ export default function CartPage() {
 
           {cartItems.length === 0 ? (
             <div className="cart-empty">
-              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" style={{ marginBottom: "24px", opacity: 0.5 }}>
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" className="icon-faded">
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
-              <p style={{ color: "#94a3b8", marginBottom: "24px", fontSize: "18px" }}>No tienes proyectos en tu lista</p>
-              <p style={{ color: "#64748b", marginBottom: "32px", maxWidth: "400px", textAlign: "center" }}>
+              <p className="empty-state-text">No tienes proyectos en tu lista</p>
+              <p className="empty-state-subtext">
                 Explora nuestros servicios y añade los que te interesen para solicitar una cotizacion personalizada.
               </p>
               <Link href="/#servicios" className="btn-primary hover-lift">
@@ -164,7 +164,7 @@ export default function CartPage() {
               {/* Cart Summary */}
               <div className="cart-summary">
                 <h2 className="summary-title">SOLICITAR COTIZACION</h2>
-                <p style={{ color: "#94a3b8", marginBottom: "20px", fontSize: "14px" }}>
+                <p className="summary-description">
                   Cada proyecto es unico. Enviaremos tu lista por WhatsApp para darte un presupuesto personalizado.
                 </p>
                 <div className="summary-line">
@@ -179,9 +179,9 @@ export default function CartPage() {
           )}
 
           {/* CTA Section */}
-          <div style={{ marginTop: "60px", padding: "40px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "16px", border: "1px solid rgba(124, 58, 237, 0.2)", textAlign: "center" }}>
-            <h3 style={{ fontFamily: "Orbitron", color: "#f8fafc", marginBottom: "16px", fontSize: "24px" }}>¿Tienes un proyecto en mente?</h3>
-            <p style={{ color: "#94a3b8", marginBottom: "24px", maxWidth: "500px", margin: "0 auto 24px" }}>
+          <div className="cta-banner">
+            <h3 className="cta-banner-title">¿Tienes un proyecto en mente?</h3>
+            <p className="cta-banner-text">
               No importa si es una figura coleccionable, una maqueta arquitectonica o un prototipo industrial. 
               Te acompañamos desde la idea hasta la pieza final.
             </p>
@@ -189,8 +189,7 @@ export default function CartPage() {
               href="https://wa.me/59891037258" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn-secondary hover-lift"
-              style={{ display: "inline-block" }}
+              className="btn-secondary hover-lift btn-inline"
             >
               CONTACTAR POR WHATSAPP
             </a>
