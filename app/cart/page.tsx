@@ -5,43 +5,22 @@ import Link from "next/link"
 
 export default function CartPage() {
   const [searchOpen, setSearchOpen] = useState(false)
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Envio Express",
-      price: 800,
-      quantity: 1,
-      zone: "Centro",
-      image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    },
-    {
-      id: 2,
-      name: "Paqueteria Comercial",
-      price: 950,
-      quantity: 2,
-      zone: "Puerto",
-      image:
-        "https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-    },
-  ])
-
-  const updateQuantity = (id: number, delta: number) => {
-    setCartItems(
-      cartItems.map((item) => (item.id === id ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item)),
-    )
-  }
+  const [cartItems, setCartItems] = useState<{
+    id: number
+    name: string
+    description: string
+    image: string
+  }[]>([])
 
   const removeItem = (id: number) => {
     setCartItems(cartItems.filter((item) => item.id !== id))
   }
 
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  const descuento = subtotal > 2000 ? subtotal * 0.1 : 0
-  const total = subtotal - descuento
-
-  const handleCheckout = () => {
-    console.log("Procesando pedido:", { items: cartItems, total })
-    alert("Pedido confirmado! Total: $" + total.toFixed(0))
+  const handleRequestQuote = () => {
+    if (cartItems.length === 0) return
+    const itemsList = cartItems.map(item => item.name).join(", ")
+    const message = `Hola! Me interesa solicitar cotizacion para los siguientes servicios: ${itemsList}. Me gustaria recibir mas informacion.`
+    window.open(`https://wa.me/59891037258?text=${encodeURIComponent(message)}`, "_blank")
   }
 
   return (
@@ -50,8 +29,8 @@ export default function CartPage() {
       <div className="marquee-bar">
         <div className="marquee-container">
           <div className="marquee-content">
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS • 
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS •
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS • 
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS •
           </div>
         </div>
       </div>
@@ -60,20 +39,20 @@ export default function CartPage() {
       <nav className="navigation">
         <div className="logo">
           <Link href="/">
-            DOS<span>RUEDAS</span>
+            DIMPURA<span>3D</span>
           </Link>
-          <div className="beta-badge">MDP</div>
+          <div className="beta-badge">MVD</div>
         </div>
 
         <div className="nav-links">
           <Link href="/#servicios" className="nav-link">
             SERVICIOS
           </Link>
-          <Link href="/#como-funciona" className="nav-link">
-            COMO FUNCIONA
+          <Link href="/#portafolio" className="nav-link">
+            PORTAFOLIO
           </Link>
-          <Link href="/#tarifas" className="nav-link">
-            TARIFAS
+          <Link href="/#proceso" className="nav-link">
+            PROCESO
           </Link>
           <Link href="/#contacto" className="nav-link">
             CONTACTO
@@ -122,10 +101,9 @@ export default function CartPage() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
-              <path d="M16 8h4l3 4v5a1 1 0 0 1-1 1h-3"></path>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
             <span className="cart-badge">{cartItems.length}</span>
           </Link>
@@ -135,7 +113,7 @@ export default function CartPage() {
       {searchOpen && (
         <div className="search-overlay" onClick={() => setSearchOpen(false)}>
           <div className="search-container" onClick={(e) => e.stopPropagation()}>
-            <input type="text" placeholder="Rastrear envio o buscar servicio..." className="search-input" autoFocus />
+            <input type="text" placeholder="Buscar coleccionables, maquetas, servicios..." className="search-input" autoFocus />
             <button className="search-close" onClick={() => setSearchOpen(false)}>
               X
             </button>
@@ -146,12 +124,20 @@ export default function CartPage() {
       {/* Cart Section */}
       <main className="cart-section">
         <div className="cart-container">
-          <h1 className="cart-title">TUS SERVICIOS</h1>
+          <h1 className="cart-title">TUS PROYECTOS</h1>
 
           {cartItems.length === 0 ? (
             <div className="cart-empty">
-              <p>No tienes servicios seleccionados</p>
-              <Link href="/" className="btn-primary hover-lift">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" strokeWidth="1.5" style={{ marginBottom: "24px", opacity: 0.5 }}>
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+              </svg>
+              <p style={{ color: "#94a3b8", marginBottom: "24px", fontSize: "18px" }}>No tienes proyectos en tu lista</p>
+              <p style={{ color: "#64748b", marginBottom: "32px", maxWidth: "400px", textAlign: "center" }}>
+                Explora nuestros servicios y añade los que te interesen para solicitar una cotizacion personalizada.
+              </p>
+              <Link href="/#servicios" className="btn-primary hover-lift">
                 VER SERVICIOS
               </Link>
             </div>
@@ -164,19 +150,9 @@ export default function CartPage() {
                     <img src={item.image || "/placeholder.svg"} alt={item.name} className="cart-item-image" />
                     <div className="cart-item-details">
                       <h3>{item.name}</h3>
-                      <p>Zona: {item.zone}</p>
-                      <p className="cart-item-price">${item.price}</p>
+                      <p>{item.description}</p>
                     </div>
                     <div className="cart-item-controls">
-                      <div className="quantity-controls">
-                        <button className="quantity-btn" onClick={() => updateQuantity(item.id, -1)}>
-                          -
-                        </button>
-                        <span className="quantity-value">{item.quantity}</span>
-                        <button className="quantity-btn" onClick={() => updateQuantity(item.id, 1)}>
-                          +
-                        </button>
-                      </div>
                       <button className="remove-btn" onClick={() => removeItem(item.id)}>
                         ELIMINAR
                       </button>
@@ -187,26 +163,38 @@ export default function CartPage() {
 
               {/* Cart Summary */}
               <div className="cart-summary">
-                <h2 className="summary-title">RESUMEN DEL PEDIDO</h2>
+                <h2 className="summary-title">SOLICITAR COTIZACION</h2>
+                <p style={{ color: "#94a3b8", marginBottom: "20px", fontSize: "14px" }}>
+                  Cada proyecto es unico. Enviaremos tu lista por WhatsApp para darte un presupuesto personalizado.
+                </p>
                 <div className="summary-line">
-                  <span>Subtotal</span>
-                  <span>${subtotal}</span>
+                  <span>Proyectos seleccionados</span>
+                  <span>{cartItems.length}</span>
                 </div>
-                <div className="summary-line">
-                  <span>Descuento</span>
-                  <span>{descuento === 0 ? "-" : `-$${descuento.toFixed(0)}`}</span>
-                </div>
-                {subtotal < 2000 && <p className="shipping-note">Suma ${(2000 - subtotal).toFixed(0)} mas para obtener 10% de descuento!</p>}
-                <div className="summary-total">
-                  <span>Total</span>
-                  <span>${total.toFixed(0)}</span>
-                </div>
-                <button onClick={handleCheckout} className="btn-primary hover-lift checkout-btn">
-                  CONFIRMAR PEDIDO
+                <button onClick={handleRequestQuote} className="btn-primary hover-lift checkout-btn">
+                  SOLICITAR COTIZACION POR WHATSAPP
                 </button>
               </div>
             </div>
           )}
+
+          {/* CTA Section */}
+          <div style={{ marginTop: "60px", padding: "40px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "16px", border: "1px solid rgba(124, 58, 237, 0.2)", textAlign: "center" }}>
+            <h3 style={{ fontFamily: "Orbitron", color: "#f8fafc", marginBottom: "16px", fontSize: "24px" }}>¿Tienes un proyecto en mente?</h3>
+            <p style={{ color: "#94a3b8", marginBottom: "24px", maxWidth: "500px", margin: "0 auto 24px" }}>
+              No importa si es una figura coleccionable, una maqueta arquitectonica o un prototipo industrial. 
+              Te acompañamos desde la idea hasta la pieza final.
+            </p>
+            <a 
+              href="https://wa.me/59891037258" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="btn-secondary hover-lift"
+              style={{ display: "inline-block" }}
+            >
+              CONTACTAR POR WHATSAPP
+            </a>
+          </div>
         </div>
       </main>
 
@@ -214,18 +202,18 @@ export default function CartPage() {
       <footer className="footer">
         <div className="footer-content">
           <Link href="/" className="footer-logo">
-            DOSRUEDAS
+            DIMPURA3D
           </Link>
-          <div className="footer-copyright">2024 Envios DosRuedas. Todos los derechos reservados. Mar del Plata.</div>
+          <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
           <div className="footer-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
-            <a href="https://wa.me/542234000000" target="_blank" rel="noopener noreferrer">
-              WhatsApp
+            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer">
+              Facebook
             </a>
-            <a href="mailto:info@dosruedas.com" target="_blank" rel="noopener noreferrer">
-              Email
+            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer">
+              WhatsApp
             </a>
           </div>
         </div>

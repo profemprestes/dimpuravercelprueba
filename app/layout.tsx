@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Envios DosRuedas - Tu Solucion Confiable",
+  title: "Dimpura3D - Del archivo digital a la realidad tangible",
   description:
-    "Logistica urbana de alta precision y confiabilidad para envios inmediatos, programados y soluciones comerciales en Mar del Plata.",
+    "Estudio de impresion 3D en Montevideo. Diseño, impresion y pintura de coleccionables, maquetas arquitectonicas y proyectos personalizados con acabados profesionales.",
   generator: "v0.app",
   icons: {
     icon: [
@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body>{children}</body>
     </html>
   )

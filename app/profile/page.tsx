@@ -6,50 +6,14 @@ import Link from "next/link"
 export default function ProfilePage() {
   const [searchOpen, setSearchOpen] = useState(false)
 
-  const envios = [
-    {
-      id: "#DR-00124",
-      date: "8 Abr, 2024",
-      status: "Entregado",
-      total: 1600,
-      items: 2,
-    },
-    {
-      id: "#DR-00098",
-      date: "5 Abr, 2024",
-      status: "En Camino",
-      total: 800,
-      items: 1,
-    },
-  ]
-
-  const handleEditProfile = () => {
-    console.log("Editar perfil clickeado")
-    alert("Editar perfil proximamente!")
-  }
-
-  const handleViewOrder = (orderId: string) => {
-    console.log("Ver envio:", orderId)
-    alert(`Detalles del envio ${orderId} proximamente!`)
-  }
-
-  const handleSettingClick = (setting: string) => {
-    console.log("Setting clicked:", setting)
-    if (setting === "logout") {
-      alert("Cerrar sesion proximamente!")
-    } else {
-      alert(`${setting} proximamente!`)
-    }
-  }
-
   return (
     <>
       {/* Top Marquee Bar */}
       <div className="marquee-bar">
         <div className="marquee-container">
           <div className="marquee-content">
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS • 
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS •
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS • 
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS •
           </div>
         </div>
       </div>
@@ -58,20 +22,20 @@ export default function ProfilePage() {
       <nav className="navigation">
         <div className="logo">
           <Link href="/">
-            DOS<span>RUEDAS</span>
+            DIMPURA<span>3D</span>
           </Link>
-          <div className="beta-badge">MDP</div>
+          <div className="beta-badge">MVD</div>
         </div>
 
         <div className="nav-links">
           <Link href="/#servicios" className="nav-link">
             SERVICIOS
           </Link>
-          <Link href="/#como-funciona" className="nav-link">
-            COMO FUNCIONA
+          <Link href="/#portafolio" className="nav-link">
+            PORTAFOLIO
           </Link>
-          <Link href="/#tarifas" className="nav-link">
-            TARIFAS
+          <Link href="/#proceso" className="nav-link">
+            PROCESO
           </Link>
           <Link href="/#contacto" className="nav-link">
             CONTACTO
@@ -120,12 +84,11 @@ export default function ProfilePage() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
-              <path d="M16 8h4l3 4v5a1 1 0 0 1-1 1h-3"></path>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
-            <span className="cart-badge">2</span>
+            <span className="cart-badge">0</span>
           </Link>
         </div>
       </nav>
@@ -133,7 +96,7 @@ export default function ProfilePage() {
       {searchOpen && (
         <div className="search-overlay" onClick={() => setSearchOpen(false)}>
           <div className="search-container" onClick={(e) => e.stopPropagation()}>
-            <input type="text" placeholder="Rastrear envio o buscar servicio..." className="search-input" autoFocus />
+            <input type="text" placeholder="Buscar coleccionables, maquetas, servicios..." className="search-input" autoFocus />
             <button className="search-close" onClick={() => setSearchOpen(false)}>
               X
             </button>
@@ -141,90 +104,138 @@ export default function ProfilePage() {
         </div>
       )}
 
-      {/* Profile Section */}
+      {/* About Section */}
       <main className="profile-section">
         <div className="profile-container">
-          <h1 className="profile-title">MI CUENTA</h1>
+          <h1 className="profile-title">SOBRE NOSOTROS</h1>
 
-          {/* Profile Card */}
+          {/* About Card */}
           <div className="profile-card">
-            <div className="profile-header">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" 
-                alt="Perfil" 
-                className="profile-avatar"
-              />
+            <div className="profile-header" style={{ flexDirection: "column", alignItems: "center", textAlign: "center" }}>
+              <div style={{ 
+                width: "120px", 
+                height: "120px", 
+                borderRadius: "50%", 
+                background: "linear-gradient(135deg, #7C3AED 0%, #10B981 100%)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                marginBottom: "20px",
+                fontSize: "36px",
+                fontFamily: "Orbitron",
+                fontWeight: "bold",
+                color: "#f8fafc"
+              }}>
+                D3D
+              </div>
               <div>
-                <h2 className="profile-name">Carlos Martinez</h2>
-                <p className="profile-email">carlos.martinez@email.com</p>
+                <h2 className="profile-name" style={{ textAlign: "center" }}>Dimpura3D</h2>
+                <p className="profile-email" style={{ textAlign: "center" }}>Estudio de Impresion 3D en Montevideo</p>
               </div>
             </div>
             
             <div className="profile-stats">
               <div className="stat-item">
-                <span className="stat-value">24</span>
-                <span className="stat-label">Envios</span>
+                <span className="stat-value">+500</span>
+                <span className="stat-label">Proyectos</span>
               </div>
               <div className="stat-item">
-                <span className="stat-value">98%</span>
-                <span className="stat-label">A Tiempo</span>
+                <span className="stat-value">5+</span>
+                <span className="stat-label">Años</span>
               </div>
               <div className="stat-item">
-                <span className="stat-value">$12.4k</span>
-                <span className="stat-label">Total</span>
+                <span className="stat-value">100%</span>
+                <span className="stat-label">Satisfaccion</span>
               </div>
             </div>
           </div>
 
-          {/* Recent Orders */}
+          {/* Description */}
           <div className="profile-card">
-            <h3 className="profile-section-title">ENVIOS RECIENTES</h3>
-            {envios.map((envio) => (
-              <div key={envio.id} className="order-item">
-                <div>
-                  <span className="order-id">{envio.id}</span>
-                  <span className="order-date"> - {envio.date}</span>
-                </div>
-                <span className={`order-status ${envio.status === "Entregado" ? "delivered" : "pending"}`}>
-                  {envio.status}
-                </span>
-                <span className="order-total">${envio.total}</span>
-              </div>
-            ))}
+            <h3 className="profile-section-title">NUESTRA HISTORIA</h3>
+            <p style={{ color: "#94a3b8", lineHeight: "1.8", marginBottom: "16px" }}>
+              Somos un estudio en Montevideo dedicado a materializar ideas. No solo imprimimos; diseñamos, 
+              pulimos y pintamos para dar un acabado profesional a maquetas, coleccionables y prototipos industriales.
+            </p>
+            <p style={{ color: "#94a3b8", lineHeight: "1.8" }}>
+              Desde figuras de cultura pop hasta maquetas arquitectonicas, cada proyecto recibe atencion al detalle 
+              y acabados que superan expectativas. Trabajamos con tecnologia FDM y resina para garantizar la mejor 
+              calidad en cada pieza.
+            </p>
           </div>
 
-          {/* Settings */}
+          {/* Services Summary */}
           <div className="profile-card">
-            <h3 className="profile-section-title">CONFIGURACION</h3>
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              <button 
-                onClick={() => handleSettingClick("Direcciones guardadas")}
-                className="btn-secondary hover-lift"
-                style={{ width: "100%", textAlign: "left" }}
-              >
-                Direcciones Guardadas
-              </button>
-              <button 
-                onClick={() => handleSettingClick("Metodos de pago")}
-                className="btn-secondary hover-lift"
-                style={{ width: "100%", textAlign: "left" }}
-              >
-                Metodos de Pago
-              </button>
-              <button 
-                onClick={() => handleSettingClick("Notificaciones")}
-                className="btn-secondary hover-lift"
-                style={{ width: "100%", textAlign: "left" }}
-              >
-                Notificaciones
-              </button>
-              <button 
-                onClick={() => handleSettingClick("logout")}
+            <h3 className="profile-section-title">QUE HACEMOS</h3>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
+              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
+                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>MODELADO 3D</h4>
+                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Diseño digital desde cero</p>
+              </div>
+              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
+                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>IMPRESION 3D</h4>
+                <p style={{ color: "#94a3b8", fontSize: "13px" }}>FDM y Resina de alta resolucion</p>
+              </div>
+              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
+                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>PINTURA</h4>
+                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Acabados profesionales</p>
+              </div>
+              <div style={{ padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
+                <h4 style={{ color: "#10B981", marginBottom: "8px", fontFamily: "Orbitron", fontSize: "14px" }}>MAQUETAS</h4>
+                <p style={{ color: "#94a3b8", fontSize: "13px" }}>Arquitectura e ingenieria</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="profile-card">
+            <h3 className="profile-section-title">CONTACTO</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <a 
+                href="https://wa.me/59891037258"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary hover-lift"
-                style={{ width: "100%", marginTop: "12px" }}
+                style={{ width: "100%", textAlign: "center" }}
               >
-                CERRAR SESION
-              </button>
+                WHATSAPP: +598 91 037 258
+              </a>
+              <a 
+                href="mailto:dimpura3d@gmail.com"
+                className="btn-secondary hover-lift"
+                style={{ width: "100%", textAlign: "center" }}
+              >
+                EMAIL: dimpura3d@gmail.com
+              </a>
+              <div style={{ padding: "16px", background: "rgba(16, 185, 129, 0.1)", borderRadius: "8px", border: "1px solid rgba(16, 185, 129, 0.2)", textAlign: "center" }}>
+                <p style={{ color: "#10B981", fontFamily: "Orbitron", fontSize: "12px", marginBottom: "8px" }}>TALLER</p>
+                <p style={{ color: "#94a3b8" }}>Ignacio Medina 3257, Montevideo, Uruguay</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="profile-card">
+            <h3 className="profile-section-title">REDES SOCIALES</h3>
+            <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+              <a 
+                href="https://www.instagram.com/dimpura3d/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary hover-lift"
+                style={{ flex: 1, minWidth: "150px", textAlign: "center" }}
+              >
+                INSTAGRAM
+              </a>
+              <a 
+                href="https://www.facebook.com/dimpura3d.uy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary hover-lift"
+                style={{ flex: 1, minWidth: "150px", textAlign: "center" }}
+              >
+                FACEBOOK
+              </a>
             </div>
           </div>
         </div>
@@ -234,18 +245,18 @@ export default function ProfilePage() {
       <footer className="footer">
         <div className="footer-content">
           <Link href="/" className="footer-logo">
-            DOSRUEDAS
+            DIMPURA3D
           </Link>
-          <div className="footer-copyright">2024 Envios DosRuedas. Todos los derechos reservados. Mar del Plata.</div>
+          <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
           <div className="footer-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
-            <a href="https://wa.me/542234000000" target="_blank" rel="noopener noreferrer">
-              WhatsApp
+            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer">
+              Facebook
             </a>
-            <a href="mailto:info@dosruedas.com" target="_blank" rel="noopener noreferrer">
-              Email
+            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer">
+              WhatsApp
             </a>
           </div>
         </div>

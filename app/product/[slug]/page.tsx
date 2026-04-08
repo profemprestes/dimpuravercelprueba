@@ -7,23 +7,62 @@ import { useParams, useRouter } from "next/navigation"
 export default function ServicePage() {
   const params = useParams()
   const router = useRouter()
-  const [quantity, setQuantity] = useState(1)
-  const [selectedZone, setSelectedZone] = useState("Centro")
+  const [selectedMaterial, setSelectedMaterial] = useState("PLA")
+  const [selectedFinish, setSelectedFinish] = useState("Basico")
   const [searchOpen, setSearchOpen] = useState(false)
 
-  // Mock service data
-  const service = {
-    name: "Envio Express",
-    price: 800,
-    description:
-      "Entrega rapida en menos de 30 minutos dentro de Mar del Plata. Ideal para documentos, paquetes pequenos y envios urgentes. Rastreo GPS en tiempo real y confirmacion de entrega.",
-    zones: ["Centro", "Puerto", "La Perla", "Guemes", "Constitucion", "Punta Mogotes"],
-    image: "https://images.unsplash.com/photo-1616401784845-180882ba9ba8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  // Mock service data based on Dimpura3D services
+  const services: Record<string, {
+    name: string
+    priceFrom: string
+    description: string
+    materials?: string[]
+    finishes?: string[]
+    image: string
+    badge: string
+  }> = {
+    "modelado-3d": {
+      name: "Modelado y Diseño 3D",
+      priceFrom: "USD $30",
+      description:
+        "Creacion de archivos digitales desde cero. Diseñamos tu idea en 3D con precision profesional. Incluye revisiones ilimitadas hasta tu aprobacion. Ideal para coleccionables, maquetas, prototipos y piezas personalizadas.",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      badge: "DISEÑO"
+    },
+    "impresion-3d": {
+      name: "Impresion 3D",
+      priceFrom: "Consultar",
+      description:
+        "Impresion en tecnologia FDM (filamento) y Resina de alta resolucion. Capacidad para piezas grandes como cascos tamaño real y miniaturas de alta definicion. Material PLA, PETG, ABS y resinas especiales.",
+      materials: ["PLA", "PETG", "ABS", "Resina"],
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      badge: "FDM + RESINA"
+    },
+    "pintura-3d": {
+      name: "Pintura y Acabados",
+      priceFrom: "Consultar",
+      description:
+        "Acabado artesanal y detallado de las piezas impresas para lograr resultados realistas o decorativos. Incluye alisado, pintado a mano con aerografo y pinceles, azules metalicos, sombreados y acabados hiperrealistas.",
+      finishes: ["Basico", "Metalizado", "Hiperrealista", "Automotriz"],
+      image: "https://images.unsplash.com/photo-1612441804231-fe428ec7f38d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      badge: "PREMIUM"
+    },
+    "maquetas": {
+      name: "Maquetas Arquitectonicas",
+      priceFrom: "Consultar",
+      description:
+        "Creacion de edificios y estructuras a escala con acabados profesionales para arquitectura e ingenieria. Trabajamos con estudios de arquitectura y constructoras para validacion de proyectos.",
+      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      badge: "ARQUITECTURA"
+    }
   }
 
-  const handleRequestService = () => {
-    console.log("Servicio solicitado:", { service: service.name, zone: selectedZone, quantity })
-    router.push("/cart")
+  const slug = params.slug as string
+  const service = services[slug] || services["modelado-3d"]
+
+  const handleRequestQuote = () => {
+    const message = `Hola! Me interesa el servicio de ${service.name}. ${service.materials ? `Material: ${selectedMaterial}. ` : ""}${service.finishes ? `Acabado: ${selectedFinish}. ` : ""}Me gustaria recibir una cotizacion.`
+    window.open(`https://wa.me/59891037258?text=${encodeURIComponent(message)}`, "_blank")
   }
 
   return (
@@ -32,8 +71,8 @@ export default function ServicePage() {
       <div className="marquee-bar">
         <div className="marquee-container">
           <div className="marquee-content">
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS • 
-            ENVIOS EN 30 MINUTOS EN MAR DEL PLATA • RASTREO EN TIEMPO REAL • TARIFAS TRANSPARENTES • SOCIOS COMERCIALES BIENVENIDOS •
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS • 
+            IMPRESION 3D EN MONTEVIDEO • COLECCIONABLES DE ALTA CALIDAD • MAQUETAS ARQUITECTONICAS • PINTURA PROFESIONAL • PROYECTOS PERSONALIZADOS •
           </div>
         </div>
       </div>
@@ -42,20 +81,20 @@ export default function ServicePage() {
       <nav className="navigation">
         <div className="logo">
           <Link href="/">
-            DOS<span>RUEDAS</span>
+            DIMPURA<span>3D</span>
           </Link>
-          <div className="beta-badge">MDP</div>
+          <div className="beta-badge">MVD</div>
         </div>
 
         <div className="nav-links">
           <Link href="/#servicios" className="nav-link">
             SERVICIOS
           </Link>
-          <Link href="/#como-funciona" className="nav-link">
-            COMO FUNCIONA
+          <Link href="/#portafolio" className="nav-link">
+            PORTAFOLIO
           </Link>
-          <Link href="/#tarifas" className="nav-link">
-            TARIFAS
+          <Link href="/#proceso" className="nav-link">
+            PROCESO
           </Link>
           <Link href="/#contacto" className="nav-link">
             CONTACTO
@@ -104,12 +143,11 @@ export default function ServicePage() {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <rect x="1" y="3" width="15" height="13" rx="2"></rect>
-              <path d="M16 8h4l3 4v5a1 1 0 0 1-1 1h-3"></path>
-              <circle cx="5.5" cy="18.5" r="2.5"></circle>
-              <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
             </svg>
-            <span className="cart-badge">2</span>
+            <span className="cart-badge">0</span>
           </Link>
         </div>
       </nav>
@@ -117,7 +155,7 @@ export default function ServicePage() {
       {searchOpen && (
         <div className="search-overlay" onClick={() => setSearchOpen(false)}>
           <div className="search-container" onClick={(e) => e.stopPropagation()}>
-            <input type="text" placeholder="Rastrear envio o buscar servicio..." className="search-input" autoFocus />
+            <input type="text" placeholder="Buscar coleccionables, maquetas, servicios..." className="search-input" autoFocus />
             <button className="search-close" onClick={() => setSearchOpen(false)}>
               X
             </button>
@@ -135,50 +173,67 @@ export default function ServicePage() {
 
           {/* Service Info */}
           <div className="product-detail-info">
-            <div className="product-badge new">RAPIDO</div>
+            <div className="product-badge new">{service.badge}</div>
             <h1 className="product-detail-title">{service.name}</h1>
-            <div className="product-detail-price">Desde ${service.price}</div>
+            <div className="product-detail-price">{service.priceFrom}</div>
 
             <p className="product-detail-description">{service.description}</p>
 
-            {/* Zone Selection */}
-            <div className="size-selection">
-              <label className="size-label">ZONA DE ENTREGA</label>
-              <div className="size-options">
-                {service.zones.map((zone) => (
-                  <button
-                    key={zone}
-                    className={`size-button ${selectedZone === zone ? "selected" : ""}`}
-                    onClick={() => setSelectedZone(zone)}
-                  >
-                    {zone}
-                  </button>
-                ))}
+            {/* Material Selection (for impresion-3d) */}
+            {service.materials && (
+              <div className="size-selection">
+                <label className="size-label">MATERIAL</label>
+                <div className="size-options">
+                  {service.materials.map((material) => (
+                    <button
+                      key={material}
+                      className={`size-button ${selectedMaterial === material ? "selected" : ""}`}
+                      onClick={() => setSelectedMaterial(material)}
+                    >
+                      {material}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Quantity Selection */}
-            <div className="quantity-selection">
-              <label className="quantity-label">CANTIDAD DE ENVIOS</label>
-              <div className="quantity-controls">
-                <button className="quantity-btn" onClick={() => setQuantity(Math.max(1, quantity - 1))}>
-                  -
-                </button>
-                <span className="quantity-value">{quantity}</span>
-                <button className="quantity-btn" onClick={() => setQuantity(quantity + 1)}>
-                  +
-                </button>
+            {/* Finish Selection (for pintura-3d) */}
+            {service.finishes && (
+              <div className="size-selection">
+                <label className="size-label">TIPO DE ACABADO</label>
+                <div className="size-options">
+                  {service.finishes.map((finish) => (
+                    <button
+                      key={finish}
+                      className={`size-button ${selectedFinish === finish ? "selected" : ""}`}
+                      onClick={() => setSelectedFinish(finish)}
+                    >
+                      {finish}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
-            {/* Request Service Button */}
+            {/* Request Quote Button */}
             <button
-              onClick={handleRequestService}
+              onClick={handleRequestQuote}
               className="btn-primary hover-lift"
-              style={{ textAlign: "center", display: "block", width: "100%" }}
+              style={{ textAlign: "center", display: "block", width: "100%", marginTop: "24px" }}
             >
-              SOLICITAR SERVICIO
+              SOLICITAR COTIZACION POR WHATSAPP
             </button>
+
+            {/* Additional Info */}
+            <div style={{ marginTop: "32px", padding: "20px", background: "rgba(124, 58, 237, 0.1)", borderRadius: "12px", border: "1px solid rgba(124, 58, 237, 0.2)" }}>
+              <h4 style={{ color: "#10B981", marginBottom: "12px", fontFamily: "Orbitron" }}>Incluye:</h4>
+              <ul style={{ color: "#94a3b8", fontSize: "14px", lineHeight: "1.8", paddingLeft: "20px" }}>
+                <li>Asesoria personalizada</li>
+                <li>Revisiones hasta aprobacion</li>
+                <li>Entrega en Montevideo o envio</li>
+                <li>Garantia de calidad</li>
+              </ul>
+            </div>
           </div>
         </div>
       </main>
@@ -187,18 +242,18 @@ export default function ServicePage() {
       <footer className="footer">
         <div className="footer-content">
           <Link href="/" className="footer-logo">
-            DOSRUEDAS
+            DIMPURA3D
           </Link>
-          <div className="footer-copyright">2024 Envios DosRuedas. Todos los derechos reservados. Mar del Plata.</div>
+          <div className="footer-copyright">2026 Dimpura3D. Todos los derechos reservados. Montevideo, Uruguay.</div>
           <div className="footer-links">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/dimpura3d/" target="_blank" rel="noopener noreferrer">
               Instagram
             </a>
-            <a href="https://wa.me/542234000000" target="_blank" rel="noopener noreferrer">
-              WhatsApp
+            <a href="https://www.facebook.com/dimpura3d.uy/" target="_blank" rel="noopener noreferrer">
+              Facebook
             </a>
-            <a href="mailto:info@dosruedas.com" target="_blank" rel="noopener noreferrer">
-              Email
+            <a href="https://wa.me/59891037258" target="_blank" rel="noopener noreferrer">
+              WhatsApp
             </a>
           </div>
         </div>
