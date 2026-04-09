@@ -32,7 +32,8 @@ export default function Navbar({ cartCount = 0 }: NavbarProps) {
               alt="Dimpura3D Logo"
               width={120}
               height={40}
-              className="h-10 w-auto object-contain"
+              className="object-contain"
+              style={{ height: '40px', width: 'auto' }}
               priority
             />
             <span className="hidden sm:inline">
