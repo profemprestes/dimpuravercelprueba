@@ -24,7 +24,7 @@ export default async function AdminDashboard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat) => (
-          <div key={stat.label} className="bg-[var(--color-admin-surface)] border border-[var(--color-admin-border)] rounded-2xl p-6 hover:shadow-neon-sm hover:border-primary/30 transition-all duration-300 backdrop-blur-xl group">
+          <div key={stat.label} className="bg-(--color-admin-surface) border border-(--color-admin-border) rounded-2xl p-6 hover:shadow-neon-sm hover:border-primary/30 transition-all duration-300 backdrop-blur-xl group">
             <div className="flex items-start justify-between">
               <div>
                 <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">{stat.label}</p>
@@ -39,7 +39,7 @@ export default async function AdminDashboard() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-        <div className="bg-[var(--color-admin-surface)] border border-[var(--color-admin-border)] rounded-2xl p-8 backdrop-blur-xl">
+        <div className="bg-(--color-admin-surface) border border-(--color-admin-border) rounded-2xl p-8 backdrop-blur-xl">
           <h3 className="text-xl font-display font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-3">
             <div className="w-2 h-2 bg-primary rounded-full shadow-neon-sm" />
             Actividad Reciente
@@ -50,7 +50,7 @@ export default async function AdminDashboard() {
             <p className="text-[10px] text-slate-600 mt-1">Conecta Google Analytics para ver estadísticas.</p>
           </div>
         </div>
-        <div className="bg-[var(--color-admin-surface)] border border-[var(--color-admin-border)] rounded-2xl p-8 backdrop-blur-xl">
+        <div className="bg-(--color-admin-surface) border border-(--color-admin-border) rounded-2xl p-8 backdrop-blur-xl">
           <h3 className="text-xl font-display font-bold text-white mb-6 uppercase tracking-widest flex items-center gap-3">
             <div className="w-2 h-2 bg-secondary rounded-full shadow-neon-magenta" />
             Alertas del Sistema

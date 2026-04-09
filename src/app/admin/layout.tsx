@@ -19,10 +19,10 @@ export default async function AdminLayout({
   await requireAdmin();
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-admin-bg)] text-slate-50">
+    <div className="flex min-h-screen bg-(--color-admin-bg) text-slate-50">
       {/* Sidebar Desktop */}
-      <aside className="hidden md:flex w-64 flex-col border-r border-[var(--color-admin-border)] bg-[var(--color-admin-surface)] backdrop-blur-xl">
-        <div className="p-6 border-b border-[var(--color-admin-border)]">
+      <aside className="hidden md:flex w-64 flex-col border-r border-(--color-admin-border) bg-(--color-admin-surface) backdrop-blur-xl">
+        <div className="p-6 border-b border-(--color-admin-border)">
           <Link href="/" className="flex items-center gap-2 group">
             <img src="/logo.png" alt="Logo" className="w-8 h-8 object-contain" />
             <span className="font-display font-bold uppercase tracking-widest text-xl group-hover:text-primary transition-colors">Dimpura<span className="text-primary">3D</span></span>
@@ -58,7 +58,7 @@ export default async function AdminLayout({
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col min-w-0">
-        <header className="h-16 border-b border-[var(--color-admin-border)] bg-[var(--color-admin-surface)] backdrop-blur-xl flex items-center justify-between px-6 md:px-8">
+        <header className="h-16 border-b border-(--color-admin-border) bg-(--color-admin-surface) backdrop-blur-xl flex items-center justify-between px-6 md:px-8">
           <div className="flex items-center gap-4 md:hidden">
             <Button variant="ghost" size="icon">
               <Menu size={24} />
